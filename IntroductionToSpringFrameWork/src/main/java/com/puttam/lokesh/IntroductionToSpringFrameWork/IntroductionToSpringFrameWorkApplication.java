@@ -8,14 +8,19 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class IntroductionToSpringFrameWorkApplication implements CommandLineRunner {
 	@Autowired
-	PaymentService paymentService;
+	PaymentService paymentService1;
+	@Autowired
+	PaymentService paymentService2;
 	public static void main(String[] args) {
 		SpringApplication.run(IntroductionToSpringFrameWorkApplication.class, args);
 	}
 
 	@Override
 	public void run(String... args) throws Exception {
-		paymentService.pay();
+		System.out.println(paymentService1.hashCode());
+		System.out.println(paymentService2.hashCode());
+		paymentService1.pay();
+		paymentService2.pay();
 
 	}
 }
